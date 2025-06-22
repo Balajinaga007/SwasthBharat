@@ -1,0 +1,76 @@
+You are a senior government web developer.
+Build a fully working, responsive, modern Indian government-style website named SwasthBharath, inspired by https://www.nitiforstates.gov.in.
+Use HTML, CSS (Bootstrap or similar) and Vanilla JS for frontend. Use Flask or ExpressJS optionally for backend.
+
+🔖 Website Sections and Features:
+✅ Navbar
+Fixed top navbar with links:
+Home, About, Life Stages, Knowledge Center, Data, Help, Login, Register
+
+✅ Homepage
+Large banner with slider (3 slides: "SwasthBharat Slide 1", "Slide 2", "Slide 3")
+
+A visual block showing difference between Lifespan and Healthspan
+
+A stat section:
+
+India’s lifespan has increased by 23 years since 1975, from 49 to 72 years.
+
+A "Technology for Healthspan" teaser section
+
+✅ Footer
+Quick links: About, Community, Resources, Help, Knowledge Center
+
+Contact:
+
+contact@healthhub.in
+
++91 9999999999
+
+© 2025 HealthHub. All Rights Reserved.
+
+🔄 Life Stages Pages (each a separate HTML page):
+Each Life Stage should have its own page with content pulled from the ANNEXURE 2 diagram, with a clear layout separating:
+
+Envisioned Health Ecosystem in 2035 (green cards)
+
+Frontier Technologies (blue cards)
+
+Life Stages:
+Prenatal & Maternal Care (Before Birth)
+
+Neonatal & Infant Care (0–1 year)
+
+Early Childhood (1–5 years)
+
+School Age & Adolescence (5–18 years)
+
+Adulthood (18–60 years)
+
+Elderly Care (60+ years)
+
+End-of-Life & Death Services
+
+Each of these pages should:
+
+Use cards or a clean table layout to display:
+
+Health programs/initiatives in green (from image)
+
+Technologies enabling the ecosystem in blue (from image)
+
+Include breadcrumb navigation and a hero banner for context
+
+🖼 Design and UI Guidelines:
+Match visual theme of https://www.nitiforstates.gov.in (Indian government site):
+
+Clean layout, blue/white or saffron themes
+
+Accessibility support
+
+Mobile responsive
+
+🚀 Optional Enhancements:
+Allow navigation between life stage pages with arrows or buttons.
+
+Include search or filter option on technology terms like “AI”, “Blockchain”, “IoT”.
