@@ -1,0 +1,262 @@
+{% extends "base.html" %}
+
+{% block title %}{{ stage_data.title }} - SwasthBharath{% endblock %}
+
+{% block content %}
+<!-- Breadcrumb Navigation -->
+<nav aria-label="breadcrumb" style="margin-top: 76px;" class="bg-light py-2">
+    <div class="container">
+        <ol class="breadcrumb mb-0">
+            <li class="breadcrumb-item"><a href="{{ url_for('index') }}" class="text-decoration-none">Home</a></li>
+            <li class="breadcrumb-item"><a href="#" class="text-decoration-none">Life Stages</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{ stage_data.title }}</li>
+        </ol>
+    </div>
+</nav>
+
+<!-- Hero Banner -->
+<section class="hero-banner py-5" style="background: linear-gradient(135deg, #1c4587 0%, #2563eb 100%);">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8">
+                <h1 class="display-4 text-white fw-bold mb-3">{{ stage_data.title }}</h1>
+                <p class="h4 text-white-75 mb-3">{{ stage_data.subtitle }}</p>
+                <p class="lead text-white-75 mb-4">{{ stage_data.description }}</p>
+                
+                <!-- Navigation arrows -->
+                <div class="d-flex gap-2">
+                    {% set stage_keys = ['prenatal_maternal', 'neonatal_infant', 'early_childhood', 'school_adolescence', 'adulthood', 'elderly_care', 'end_of_life'] %}
+                    {% set current_index = stage_keys.index(stage_key) %}
+                    
+                    {% if current_index > 0 %}
+                        {% set prev_stage = stage_keys[current_index - 1].replace('_', '-') %}
+                        <a href="{{ url_for('life_stage', stage=prev_stage) }}" class="btn btn-outline-light">
+                            <i class="fas fa-arrow-left me-2"></i>Previous Stage
+                        </a>
+                    {% endif %}
+                    
+                    {% if current_index < stage_keys|length - 1 %}
+                        {% set next_stage = stage_keys[current_index + 1].replace('_', '-') %}
+                        <a href="{{ url_for('life_stage', stage=next_stage) }}" class="btn btn-outline-light">
+                            Next Stage<i class="fas fa-arrow-right ms-2"></i>
+                        </a>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="col-lg-4 text-center">
+                <div class="stage-icon-container">
+                    {% if stage_key == 'prenatal_maternal' %}
+                        <i class="fas fa-baby fa-5x text-white-75"></i>
+                    {% elif stage_key == 'neonatal_infant' %}
+                        <i class="fas fa-child fa-5x text-white-75"></i>
+                    {% elif stage_key == 'early_childhood' %}
+                        <i class="fas fa-toys fa-5x text-white-75"></i>
+                    {% elif stage_key == 'school_adolescence' %}
+                        <i class="fas fa-graduation-cap fa-5x text-white-75"></i>
+                    {% elif stage_key == 'adulthood' %}
+                        <i class="fas fa-briefcase fa-5x text-white-75"></i>
+                    {% elif stage_key == 'elderly_care' %}
+                        <i class="fas fa-walking fa-5x text-white-75"></i>
+                    {% else %}
+                        <i class="fas fa-heart fa-5x text-white-75"></i>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Health Ecosystem Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-8 text-center">
+                <h2 class="display-5 fw-bold text-success mb-3">
+                    <i class="fas fa-leaf me-2"></i>Envisioned Health Ecosystem in 2035
+                </h2>
+                <p class="lead text-muted">Comprehensive health programs and initiatives for {{ stage_data.title.lower() }}</p>
+            </div>
+        </div>
+        
+        <div class="row g-4">
+            {% for program in stage_data.health_ecosystem %}
+            <div class="col-lg-6 col-md-6">
+                <div class="card h-100 border-success health-card">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-start mb-3">
+                            <i class="fas fa-plus-circle fa-2x text-success me-3 mt-1"></i>
+                            <div>
+                                <h5 class="card-title fw-bold text-success mb-2">{{ program.title }}</h5>
+                                <p class="card-text text-muted">{{ program.description }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Frontier Technologies Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-8 text-center">
+                <h2 class="display-5 fw-bold text-primary mb-3">
+                    <i class="fas fa-microchip me-2"></i>Frontier Technologies
+                </h2>
+                <p class="lead text-muted">Cutting-edge technologies enabling the health ecosystem for {{ stage_data.title.lower() }}</p>
+            </div>
+        </div>
+        
+        <div class="row g-4">
+            {% for tech in stage_data.technologies %}
+            <div class="col-lg-6 col-md-6">
+                <div class="card h-100 border-primary tech-card">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-start mb-3">
+                            <i class="fas fa-cog fa-2x text-primary me-3 mt-1"></i>
+                            <div>
+                                <h5 class="card-title fw-bold text-primary mb-2">{{ tech.title }}</h5>
+                                <p class="card-text text-muted">{{ tech.description }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Technology Search -->
+<section class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="card border-0 shadow">
+                    <div class="card-body p-4">
+                        <h4 class="card-title fw-bold text-center mb-4">
+                            <i class="fas fa-search me-2"></i>Search Technologies
+                        </h4>
+                        <div class="input-group">
+                            <input type="text" class="form-control form-control-lg" id="techSearch" 
+                                   placeholder="Search for AI, Blockchain, IoT, or other technologies...">
+                            <button class="btn btn-primary" type="button" onclick="searchTechnologies()">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                        <div id="searchResults" class="mt-4"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Life Stage Navigation -->
+<section class="py-5 bg-primary text-white">
+    <div class="container">
+        <div class="row justify-content-center mb-4">
+            <div class="col-lg-8 text-center">
+                <h3 class="fw-bold mb-3">Explore Other Life Stages</h3>
+                <p class="lead">Comprehensive healthcare across the entire life journey</p>
+            </div>
+        </div>
+        
+        <div class="row g-3">
+            {% set all_stages = [
+                ('prenatal-maternal', 'Prenatal & Maternal', 'fas fa-baby'),
+                ('neonatal-infant', 'Neonatal & Infant', 'fas fa-child'),
+                ('early-childhood', 'Early Childhood', 'fas fa-toys'),
+                ('school-adolescence', 'School & Adolescence', 'fas fa-graduation-cap'),
+                ('adulthood', 'Adulthood', 'fas fa-briefcase'),
+                ('elderly-care', 'Elderly Care', 'fas fa-walking'),
+                ('end-of-life', 'End-of-Life', 'fas fa-heart')
+            ] %}
+            
+            {% for stage_url, stage_name, stage_icon in all_stages %}
+                {% if stage_url != stage_key.replace('_', '-') %}
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <a href="{{ url_for('life_stage', stage=stage_url) }}" class="card bg-transparent border-light text-white text-decoration-none h-100 stage-nav-card">
+                        <div class="card-body text-center p-3">
+                            <i class="{{ stage_icon }} fa-2x mb-2"></i>
+                            <h6 class="card-title fw-bold mb-0">{{ stage_name }}</h6>
+                        </div>
+                    </a>
+                </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+// Technology search functionality
+function searchTechnologies() {
+    const query = document.getElementById('techSearch').value;
+    const resultsDiv = document.getElementById('searchResults');
+    
+    if (query.length < 2) {
+        resultsDiv.innerHTML = '<p class="text-muted">Please enter at least 2 characters to search.</p>';
+        return;
+    }
+    
+    resultsDiv.innerHTML = '<div class="text-center"><i class="fas fa-spinner fa-spin fa-2x text-primary"></i></div>';
+    
+    fetch(`/api/search-technologies?q=${encodeURIComponent(query)}`)
+        .then(response => response.json())
+        .then(data => {
+            if (data.length === 0) {
+                resultsDiv.innerHTML = '<div class="alert alert-info">No technologies found matching your search.</div>';
+                return;
+            }
+            
+            let html = '<div class="row g-3">';
+            data.forEach(tech => {
+                html += `
+                    <div class="col-md-6">
+                        <div class="card border-primary">
+                            <div class="card-body">
+                                <h6 class="card-title fw-bold text-primary">${tech.title}</h6>
+                                <p class="card-text small text-muted">${tech.description}</p>
+                                <small class="text-muted">Life Stage: ${tech.stage}</small>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+            html += '</div>';
+            resultsDiv.innerHTML = html;
+        })
+        .catch(error => {
+            resultsDiv.innerHTML = '<div class="alert alert-danger">Error searching technologies. Please try again.</div>';
+        });
+}
+
+// Enable search on Enter key
+document.getElementById('techSearch').addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+        searchTechnologies();
+    }
+});
+
+// Stage navigation card hover effects
+document.addEventListener('DOMContentLoaded', function() {
+    const stageCards = document.querySelectorAll('.stage-nav-card');
+    stageCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-5px)';
+            this.style.transition = 'transform 0.3s ease';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+        });
+    });
+});
+</script>
+{% endblock %}

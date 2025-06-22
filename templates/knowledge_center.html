@@ -1,0 +1,334 @@
+{% extends "base.html" %}
+
+{% block title %}Knowledge Center - SwasthBharath{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section py-5" style="background: linear-gradient(135deg, #1c4587 0%, #2563eb 100%); margin-top: 76px;">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8">
+                <h1 class="display-4 text-white fw-bold mb-4">Knowledge Center</h1>
+                <p class="lead text-white-75 mb-4">Comprehensive health information and resources to empower informed healthcare decisions across all life stages.</p>
+            </div>
+            <div class="col-lg-4 text-center">
+                <i class="fas fa-book-open fa-5x text-white-75"></i>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Search Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="card border-0 shadow">
+                    <div class="card-body p-4">
+                        <h4 class="text-center mb-4">Search Health Information</h4>
+                        <div class="input-group input-group-lg">
+                            <input type="text" class="form-control" placeholder="Search for health topics, diseases, treatments...">
+                            <button class="btn btn-primary" type="button">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Health Topics by Life Stage -->
+<section class="py-5">
+    <div class="container">
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-8 text-center">
+                <h2 class="display-5 fw-bold text-primary mb-3">Health Information by Life Stage</h2>
+                <p class="lead text-muted">Access relevant health knowledge for every stage of life</p>
+            </div>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <div class="text-center mb-3">
+                            <i class="fas fa-baby fa-3x text-primary"></i>
+                        </div>
+                        <h5 class="card-title fw-bold text-center">Prenatal & Maternal Health</h5>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check text-success me-2"></i>Pregnancy nutrition</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Prenatal care guidelines</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Birth preparation</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Maternal mental health</li>
+                        </ul>
+                        <a href="{{ url_for('life_stage', stage='prenatal-maternal') }}" class="btn btn-outline-primary w-100">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <div class="text-center mb-3">
+                            <i class="fas fa-child fa-3x text-success"></i>
+                        </div>
+                        <h5 class="card-title fw-bold text-center">Child Development</h5>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check text-success me-2"></i>Growth milestones</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Vaccination schedules</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Early learning</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Behavioral development</li>
+                        </ul>
+                        <a href="{{ url_for('life_stage', stage='early-childhood') }}" class="btn btn-outline-success w-100">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <div class="text-center mb-3">
+                            <i class="fas fa-graduation-cap fa-3x text-info"></i>
+                        </div>
+                        <h5 class="card-title fw-bold text-center">Adolescent Health</h5>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check text-success me-2"></i>Mental health support</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Reproductive health</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Nutrition & fitness</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Substance abuse prevention</li>
+                        </ul>
+                        <a href="{{ url_for('life_stage', stage='school-adolescence') }}" class="btn btn-outline-info w-100">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <div class="text-center mb-3">
+                            <i class="fas fa-briefcase fa-3x text-warning"></i>
+                        </div>
+                        <h5 class="card-title fw-bold text-center">Adult Health</h5>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check text-success me-2"></i>Chronic disease prevention</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Occupational health</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Stress management</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Preventive screenings</li>
+                        </ul>
+                        <a href="{{ url_for('life_stage', stage='adulthood') }}" class="btn btn-outline-warning w-100">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <div class="text-center mb-3">
+                            <i class="fas fa-walking fa-3x text-secondary"></i>
+                        </div>
+                        <h5 class="card-title fw-bold text-center">Elderly Care</h5>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check text-success me-2"></i>Geriatric health</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Fall prevention</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Medication management</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Social engagement</li>
+                        </ul>
+                        <a href="{{ url_for('life_stage', stage='elderly-care') }}" class="btn btn-outline-secondary w-100">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <div class="text-center mb-3">
+                            <i class="fas fa-heart fa-3x text-danger"></i>
+                        </div>
+                        <h5 class="card-title fw-bold text-center">Palliative Care</h5>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check text-success me-2"></i>Comfort care</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Pain management</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Family support</li>
+                            <li><i class="fas fa-check text-success me-2"></i>End-of-life planning</li>
+                        </ul>
+                        <a href="{{ url_for('life_stage', stage='end-of-life') }}" class="btn btn-outline-danger w-100">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Health Technologies -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-8 text-center">
+                <h2 class="display-5 fw-bold text-primary mb-3">Understanding Health Technologies</h2>
+                <p class="lead text-muted">Learn about the cutting-edge technologies transforming healthcare</p>
+            </div>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-lg-3 col-md-6">
+                <div class="card h-100 text-center border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <i class="fas fa-robot fa-3x text-primary mb-3"></i>
+                        <h5 class="fw-bold">Artificial Intelligence</h5>
+                        <p class="card-text small text-muted">AI-powered diagnostics, predictive analytics, and personalized treatment recommendations</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-6">
+                <div class="card h-100 text-center border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <i class="fas fa-cubes fa-3x text-success mb-3"></i>
+                        <h5 class="fw-bold">Blockchain</h5>
+                        <p class="card-text small text-muted">Secure health records, drug traceability, and interoperable healthcare systems</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-6">
+                <div class="card h-100 text-center border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <i class="fas fa-wifi fa-3x text-info mb-3"></i>
+                        <h5 class="fw-bold">IoT Devices</h5>
+                        <p class="card-text small text-muted">Wearable monitors, smart medical devices, and remote patient monitoring</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-6">
+                <div class="card h-100 text-center border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <i class="fas fa-video fa-3x text-warning mb-3"></i>
+                        <h5 class="fw-bold">Telemedicine</h5>
+                        <p class="card-text small text-muted">Remote consultations, digital health platforms, and virtual care delivery</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Health Resources -->
+<section class="py-5">
+    <div class="container">
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-8 text-center">
+                <h2 class="display-5 fw-bold text-primary mb-3">Health Resources</h2>
+                <p class="lead text-muted">Essential tools and information for maintaining optimal health</p>
+            </div>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-lg-4">
+                <div class="card border-0 shadow">
+                    <img src="https://pixabay.com/get/g7d3ac863e1034a815448a8b7b893978ebf456282bca637ca5cb17ec57a43fdbacfe45c27a1d5cdfdf7c20303f30468c6b1ea73b14d0c756ed970044c48993515_1280.jpg" class="card-img-top" alt="Health Guidelines" style="height: 200px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">Health Guidelines</h5>
+                        <p class="card-text">Evidence-based health recommendations and clinical practice guidelines for healthcare providers and patients.</p>
+                        <a href="#" class="btn btn-primary">Read Guidelines</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4">
+                <div class="card border-0 shadow">
+                    <img src="https://pixabay.com/get/gc8dd553d03fb0376849c75b7019ff9caa04e835ce8328c1b4eefd2cf4e80ec8a7881006de5f3fb6f76d10eb1942b77bc15a35e1566f49cffe2a71e0e8c723923_1280.jpg" class="card-img-top" alt="Preventive Care" style="height: 200px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">Preventive Care</h5>
+                        <p class="card-text">Comprehensive information on preventive healthcare measures, screenings, and early intervention strategies.</p>
+                        <a href="#" class="btn btn-success">Learn Prevention</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4">
+                <div class="card border-0 shadow">
+                    <img src="https://pixabay.com/get/g731ea95a34e60a099f9bb6f84aa4afbc208500c47375ce2cb7a02247bec84cda0aa2f4b704540e1295ad47f3960d7c4ea7e914481093696d86e6b77d41ce8ade_1280.jpg" class="card-img-top" alt="Emergency Care" style="height: 200px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">Emergency Care</h5>
+                        <p class="card-text">Critical information for emergency situations, first aid procedures, and when to seek immediate medical attention.</p>
+                        <a href="#" class="btn btn-danger">Emergency Info</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-8 text-center">
+                <h2 class="display-5 fw-bold text-primary mb-3">Frequently Asked Questions</h2>
+                <p class="lead text-muted">Common health questions and expert answers</p>
+            </div>
+        </div>
+        
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="accordion" id="healthFAQ">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                What is the difference between lifespan and healthspan?
+                            </button>
+                        </h2>
+                        <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#healthFAQ">
+                            <div class="accordion-body">
+                                Lifespan refers to the total number of years a person lives, while healthspan is the number of years lived in good health without chronic diseases or disabilities. SwasthBharath aims to increase both, with special focus on extending healthspan through technology-enabled preventive care.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                How does AI help in healthcare?
+                            </button>
+                        </h2>
+                        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#healthFAQ">
+                            <div class="accordion-body">
+                                AI in healthcare enables early disease detection, personalized treatment plans, predictive analytics for health risks, automated medical imaging analysis, drug discovery acceleration, and improved clinical decision-making through data-driven insights.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                What are the key health priorities for different life stages?
+                            </button>
+                        </h2>
+                        <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#healthFAQ">
+                            <div class="accordion-body">
+                                Each life stage has specific health priorities: prenatal care for mothers and babies, growth monitoring for children, mental health for adolescents, chronic disease prevention for adults, and comprehensive geriatric care for elderly. SwasthBharath provides targeted programs for each stage.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                How can I access digital health services?
+                            </button>
+                        </h2>
+                        <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#healthFAQ">
+                            <div class="accordion-body">
+                                Digital health services are accessible through government health platforms, telemedicine apps, digital health records systems, and IoT-enabled health monitoring devices. Contact your local health center or visit our help section for guidance on accessing these services.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
