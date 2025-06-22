@@ -7,6 +7,7 @@
     // Global application state
     const SwasthBharath = {
         initialized: false,
+        fontSize: 'medium',
         breakpoints: {
             mobile: 576,
             tablet: 768,

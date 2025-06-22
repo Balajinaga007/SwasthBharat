@@ -60,19 +60,84 @@ h1, h2, h3, h4, h5, h6 {
     background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%) !important;
 }
 
-/* Navigation Styles */
-.navbar-brand {
+/* SwasthBharath Navigation Styles */
+.swasth-navbar {
+    background: linear-gradient(to right, #003087, #0055A4);
+    border-bottom: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.swasth-navbar .navbar-brand {
     font-size: 1.5rem;
     font-weight: 700;
+    color: white;
 }
 
-.navbar-nav .nav-link {
+.swasth-navbar .brand-text {
+    color: #2D8686;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.swasth-navbar .navbar-nav .nav-link {
+    color: white !important;
     font-weight: 500;
     transition: color var(--transition-speed) ease;
+    padding: 0.75rem 1rem;
 }
 
-.navbar-nav .nav-link:hover {
+.swasth-navbar .navbar-nav .nav-link:hover {
     color: var(--saffron) !important;
+}
+
+.swasth-navbar .nav-options {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.swasth-navbar .font-size-controls .nav-btn {
+    background: none;
+    border: none;
+    color: white;
+    padding: 0.25rem 0.5rem;
+    cursor: pointer;
+    transition: color var(--transition-speed) ease;
+    font-size: 0.9rem;
+}
+
+.swasth-navbar .font-size-controls .nav-btn:hover {
+    color: var(--saffron);
+}
+
+.swasth-navbar .language-select {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    font-size: 0.9rem;
+    max-width: 120px;
+}
+
+.swasth-navbar .language-select option {
+    background: var(--primary-blue);
+    color: white;
+}
+
+.swasth-navbar .nav-btn {
+    background: none;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all var(--transition-speed) ease;
+    font-size: 0.85rem;
+}
+
+.swasth-navbar .nav-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--saffron);
+    color: var(--saffron);
 }
 
 .dropdown-menu {
@@ -84,6 +149,14 @@ h1, h2, h3, h4, h5, h6 {
 .dropdown-item:hover {
     background-color: var(--light-gray);
     color: var(--primary-blue);
+}
+
+.navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
 /* Hero Section Styles */
@@ -357,22 +430,113 @@ h1, h2, h3, h4, h5, h6 {
     border-color: var(--primary-blue);
 }
 
-/* Footer */
-footer {
-    background: linear-gradient(135deg, #212529 0%, #495057 100%) !important;
+/* SwasthBharath Footer Styles */
+.swasth-footer {
+    background: linear-gradient(90deg, #00204A 0%, #004D9D 100%);
+    color: white;
+    padding: 3rem 0 0 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-top: 3rem;
 }
 
-footer a:hover {
-    color: var(--saffron) !important;
+.swasth-footer .footer-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
 }
 
-.social-links a {
+.swasth-footer .footer-column h4 {
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: white;
+    font-size: 1.1rem;
+}
+
+.swasth-footer .footer-column a {
+    color: #E5E5E5;
+    text-decoration: none;
+    margin-bottom: 0.5rem;
+    display: block;
+    line-height: 1.6;
     transition: color var(--transition-speed) ease;
+    font-size: 0.95rem;
 }
 
-.social-links a:hover {
-    color: var(--saffron) !important;
+.swasth-footer .footer-column a:hover {
+    color: var(--saffron);
+    text-decoration: underline;
+}
+
+.swasth-footer .footer-description {
+    color: #EBEAEA;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    max-width: 22rem;
+}
+
+.swasth-footer .footer-text {
+    color: #EBEAEA;
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+.swasth-footer .brand-text {
+    color: #2D8686;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+.swasth-footer .social-icons {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.swasth-footer .social-icons .social-link {
+    transition: transform var(--transition-speed) ease;
+}
+
+.swasth-footer .social-icons .social-link:hover {
     transform: translateY(-2px);
+}
+
+.swasth-footer .social-icons img {
+    width: 24px;
+    height: 24px;
+    opacity: 0.8;
+    transition: opacity var(--transition-speed) ease;
+}
+
+.swasth-footer .social-icons img:hover {
+    opacity: 1;
+}
+
+.swasth-footer .footer-legal {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    margin-top: 2rem;
+    padding: 1.5rem 0;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.swasth-footer .footer-legal p {
+    margin-bottom: 0;
+    font-size: 0.85rem;
+    color: #ccc;
+}
+
+@media (max-width: 768px) {
+    .swasth-footer .footer-container {
+        padding: 0 1rem;
+    }
+    
+    .swasth-footer .footer-column {
+        margin-bottom: 2rem;
+    }
+    
+    .swasth-footer .social-icons {
+        justify-content: center;
+    }
 }
 
 /* Accessibility */
@@ -490,6 +654,37 @@ footer a:hover {
         color: black !important;
     }
 }
+
+/* Font Size Adjustment Classes */
+.font-size-small {
+    font-size: 14px;
+}
+
+.font-size-small h1 { font-size: 1.8rem; }
+.font-size-small h2 { font-size: 1.6rem; }
+.font-size-small h3 { font-size: 1.4rem; }
+.font-size-small h4 { font-size: 1.2rem; }
+.font-size-small h5 { font-size: 1.1rem; }
+.font-size-small .display-3 { font-size: 2rem; }
+.font-size-small .display-4 { font-size: 1.75rem; }
+.font-size-small .display-5 { font-size: 1.5rem; }
+
+.font-size-medium {
+    font-size: 16px;
+}
+
+.font-size-large {
+    font-size: 18px;
+}
+
+.font-size-large h1 { font-size: 2.5rem; }
+.font-size-large h2 { font-size: 2.2rem; }
+.font-size-large h3 { font-size: 2rem; }
+.font-size-large h4 { font-size: 1.8rem; }
+.font-size-large h5 { font-size: 1.6rem; }
+.font-size-large .display-3 { font-size: 3.5rem; }
+.font-size-large .display-4 { font-size: 3rem; }
+.font-size-large .display-5 { font-size: 2.5rem; }
 
 /* High Contrast Mode */
 @media (prefers-contrast: high) {
