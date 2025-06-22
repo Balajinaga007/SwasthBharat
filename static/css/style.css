@@ -1,27 +1,38 @@
 /* SwasthBharath - Indian Government Health Portal Styles */
 
-/* CSS Variables for Government Color Scheme */
+/* CSS Variables for DIBM v3 Compliant Government Color Scheme */
 :root {
-    --primary-blue: #1c4587;
-    --secondary-blue: #2563eb;
-    --saffron: #ff9933;
-    --white: #ffffff;
-    --green: #138808;
-    --light-gray: #f8f9fa;
-    --dark-gray: #6c757d;
-    --success-green: #198754;
-    --warning-orange: #fd7e14;
-    --danger-red: #dc3545;
-    --info-blue: #0dcaf0;
+    /* DIBM v3 Official Colors */
+    --india-saffron: #FF9933;
+    --india-white: #FFFFFF;
+    --india-green: #138808;
+    --primary-blue: #1F4788;
+    --secondary-blue: #0066CC;
+    --accent-blue: #004080;
+    --text-primary: #333333;
+    --text-secondary: #666666;
+    --background-light: #F8F9FA;
+    --background-grey: #E5E5E5;
+    --border-light: #CCCCCC;
+    --success-green: #28A745;
+    --warning-orange: #FFC107;
+    --danger-red: #DC3545;
+    --info-blue: #17A2B8;
     
-    /* Typography */
-    --heading-font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    --body-font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* DIBM v3 Typography - Using system fonts for accessibility */
+    --heading-font: 'Noto Sans', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    --body-font: 'Noto Sans', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    --mono-font: 'Fira Code', 'Monaco', 'Consolas', 'Courier New', monospace;
     
-    /* Spacing */
+    /* DIBM v3 Spacing and Layout */
     --section-padding: 80px 0;
-    --card-border-radius: 8px;
-    --transition-speed: 0.3s;
+    --card-border-radius: 4px;
+    --transition-speed: 0.25s;
+    --container-max-width: 1320px;
+    
+    /* DIBM v3 Accessibility */
+    --focus-outline: 3px solid var(--india-saffron);
+    --focus-offset: 2px;
 }
 
 /* Base Styles */
@@ -32,8 +43,11 @@
 body {
     font-family: var(--body-font);
     line-height: 1.6;
-    color: #333;
-    background-color: #fff;
+    color: var(--text-primary);
+    background-color: var(--india-white);
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 /* Typography */
@@ -47,24 +61,56 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
 }
 
-/* Color Utilities */
-.text-orange {
-    color: var(--saffron) !important;
+/* DIBM v3 Color Utilities */
+.text-saffron {
+    color: var(--india-saffron) !important;
+}
+
+.text-primary-blue {
+    color: var(--primary-blue) !important;
+}
+
+.text-green {
+    color: var(--india-green) !important;
 }
 
 .text-white-75 {
     color: rgba(255, 255, 255, 0.75) !important;
 }
 
+.bg-saffron {
+    background-color: var(--india-saffron) !important;
+}
+
+.bg-india-green {
+    background-color: var(--india-green) !important;
+}
+
+.bg-primary-blue {
+    background-color: var(--primary-blue) !important;
+}
+
 .bg-gradient {
     background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%) !important;
 }
 
-/* SwasthBharath Navigation Styles */
+/* DIBM v3 Government Brand Bar */
+.govt-brand-bar {
+    height: 4px;
+    background: linear-gradient(90deg, var(--india-saffron) 0%, var(--india-white) 33%, var(--india-green) 66%, var(--india-green) 100%);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1060;
+}
+
+/* DIBM v3 Compliant Navigation Styles */
 .swasth-navbar {
-    background: linear-gradient(to right, #003087, #0055A4);
-    border-bottom: none;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background: var(--primary-blue);
+    border-bottom: 2px solid var(--india-saffron);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 4px; /* Account for government brand bar */
 }
 
 .swasth-navbar .navbar-brand {
@@ -87,7 +133,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .swasth-navbar .navbar-nav .nav-link:hover {
-    color: var(--saffron) !important;
+    color: var(--india-saffron) !important;
 }
 
 .swasth-navbar .nav-options {
@@ -107,7 +153,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .swasth-navbar .font-size-controls .nav-btn:hover {
-    color: var(--saffron);
+    color: var(--india-saffron);
 }
 
 .swasth-navbar .language-select {
@@ -136,8 +182,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .swasth-navbar .nav-btn:hover {
     background: rgba(255, 255, 255, 0.1);
-    border-color: var(--saffron);
-    color: var(--saffron);
+    border-color: var(--india-saffron);
+    color: var(--india-saffron);
 }
 
 .dropdown-menu {
@@ -430,13 +476,14 @@ h1, h2, h3, h4, h5, h6 {
     border-color: var(--primary-blue);
 }
 
-/* SwasthBharath Footer Styles */
+/* DIBM v3 Compliant Footer Styles */
 .swasth-footer {
-    background: linear-gradient(90deg, #00204A 0%, #004D9D 100%);
-    color: white;
+    background: var(--primary-blue);
+    color: var(--india-white);
     padding: 3rem 0 0 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: var(--body-font);
     margin-top: 3rem;
+    border-top: 3px solid var(--india-saffron);
 }
 
 .swasth-footer .footer-container {
@@ -463,7 +510,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .swasth-footer .footer-column a:hover {
-    color: var(--saffron);
+    color: var(--india-saffron);
     text-decoration: underline;
 }
 
@@ -719,14 +766,54 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
-/* Focus Styles for Accessibility */
+/* DIBM v3 Accessibility Focus Styles */
 a:focus,
 button:focus,
 .btn:focus,
 .form-control:focus,
-.form-check-input:focus {
-    outline: 2px solid var(--saffron);
-    outline-offset: 2px;
+.form-check-input:focus,
+.nav-link:focus,
+.dropdown-item:focus {
+    outline: var(--focus-outline);
+    outline-offset: var(--focus-offset);
+    border-radius: 2px;
+}
+
+/* DIBM v3 Skip Navigation */
+.skip-navigation {
+    position: absolute;
+    left: -9999px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.skip-navigation:focus {
+    position: absolute;
+    left: 6px;
+    top: 6px;
+    width: auto;
+    height: auto;
+    overflow: auto;
+    background: var(--primary-blue);
+    color: var(--india-white);
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 600;
+    z-index: 10000;
+}
+
+/* DIBM v3 High Contrast Support */
+@media (prefers-contrast: high) {
+    :root {
+        --primary-blue: #000080;
+        --secondary-blue: #0000FF;
+        --india-saffron: #FF6600;
+        --text-primary: #000000;
+        --background-light: #FFFFFF;
+    }
 }
 
 /* Skip to content link */
